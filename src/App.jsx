@@ -1,24 +1,21 @@
 import { useState } from "react";
-import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
-  const addTodo = () => {
-    if (input.trim() === "") return;
+  return (
+    <div>
+      <h1>Todo App</h1>
 
-    const newTodo = {
-      id: Date.now(),
-      text: input,
-      completed: false,
-    };
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
 
-    setTodos([...todos, newTodo]);
-    setInput("");
-  };
-
-
+      <p>{input}</p>
+    </div>
+  );
 }
 
 export default App;
