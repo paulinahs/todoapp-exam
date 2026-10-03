@@ -17,6 +17,18 @@ function App() {
     setInput("");
   };
 
+    <-- add delete function -->
+  const deleteTodo = (id) => {
+  setTodos(
+    todos.filter((todo) => todo.id !== id)
+  );
+};
+
+
+
+
+
+
   return (
     <div>
       <h1>Todo App</h1>
@@ -33,9 +45,13 @@ function App() {
     <-- add to do functionality -->
     <ul>
     {todos.map((todo) => (
-    <li key={todo.id}>
+   <li key={todo.id}>
 {todo.text}
-    </li>
+ 
+<button onClick={() => deleteTodo(todo.id)}>
+Delete
+</button>
+</li>
     ))}
     </ul>
 
