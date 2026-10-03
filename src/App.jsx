@@ -30,7 +30,18 @@ function App() {
       <button onClick={addTodo}>
         Add Todo
       </button>
+    <-- add to do functionality -->
+    <ul>
+    {todos.map((todo) => (
+    <li key={todo.id}>
+{todo.text}
+    </li>
+    ))}
+    </ul>
+
     </div>
+
+    
   );
 }
 
