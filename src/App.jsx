@@ -18,7 +18,7 @@ function App() {
     setInput("");
   };
 
-    <-- add del  -->
+
   const deleteTodo = (id) => {
     setTodos(
       todos.filter((todo) => todo.id !== id)
