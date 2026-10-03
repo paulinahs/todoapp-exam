@@ -1,7 +1,21 @@
 import { useState } from "react";
 
 function App() {
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+
+  const addTodo = () => {
+    if (input.trim() === "") return;
+
+    const newTodo = {
+      id: Date.now(),
+      text: input,
+      completed: false,
+    };
+
+    setTodos([...todos, newTodo]);
+    setInput("");
+  };
 
   return (
     <div>
@@ -13,7 +27,9 @@ function App() {
         onChange={(e) => setInput(e.target.value)}
       />
 
-      <p>{input}</p>
+      <button onClick={addTodo}>
+        Add Todo
+      </button>
     </div>
   );
 }
