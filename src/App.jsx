@@ -17,7 +17,7 @@ function App() {
     setInput("");
   };
 
-    <-- add delete function -->
+    <-- add delete  -->
   const deleteTodo = (id) => {
   setTodos(
     todos.filter((todo) => todo.id !== id)
@@ -25,7 +25,19 @@ function App() {
 };
 
 
-
+<-- complete/incomplete  -->
+const toggleTodo = (id) => {
+  setTodos(
+    todos.map((todo) =>
+      todo.id === id
+        ? {
+            ...todo,
+            completed: !todo.completed,
+          }
+        : todo
+    )
+  );
+};
 
 
 
@@ -46,11 +58,29 @@ function App() {
     <ul>
     {todos.map((todo) => (
    <li key={todo.id}>
-{todo.text}
- 
-<button onClick={() => deleteTodo(todo.id)}>
-Delete
-</button>
+  <span
+    style={{
+      textDecoration: todo.completed
+        ? "line-through"
+        : "none",
+    }}
+  >
+    {todo.text}
+  </span>
+
+  <button
+    onClick={() => toggleTodo(todo.id)}
+  >
+    {todo.completed
+      ? "Undo"
+      : "Complete"}
+  </button>
+
+  <button
+    onClick={() => deleteTodo(todo.id)}
+  >
+    Delete
+  </button>
 </li>
     ))}
     </ul>
