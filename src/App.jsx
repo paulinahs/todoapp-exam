@@ -18,7 +18,7 @@ function App() {
     setInput("");
   };
 
-
+/* delete function */
   const deleteTodo = (id) => {
     setTodos(
       todos.filter((todo) => todo.id !== id)
@@ -26,7 +26,7 @@ function App() {
   };
 
 
-<-- complete/incomplete  -->
+/* complete/incomplete  */
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
