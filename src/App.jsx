@@ -1,12 +1,15 @@
+
+
+
 import { useState } from "react";
- 
+
 function App() {
 const [todos, setTodos] = useState([]);
 const [input, setInput] = useState("");
- 
+
 const addTodo = () => {
 if (input.trim() === "") return;
- 
+
 const newTodo = {
 id: Date.now(),
 text: input,
@@ -38,7 +41,7 @@ todo.id === id
 return (
 <div className="min-h-screen bg-gray-200 flex justify-center pt-14">
 <div className="w-full max-w-5xl bg-gray-100 rounded-2xl p-12">
- 
+
 <h1 className="text-6xl font-bold text-center mb-10">
 Todo App
 </h1>
@@ -49,7 +52,7 @@ type="text"
 placeholder="Enter a task..."
 value={input}
 onChange={(e) => setInput(e.target.value)}
-className="flex-1 border-2 border-blue-600 rounded-md px-4 py-4 text-xl focus:outline-none"
+className="flex-1 border-2 border-gray-600 rounded-md px-4 py-4 text-xl focus:outline-none"
 />
 
 <button
