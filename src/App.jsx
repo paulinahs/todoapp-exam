@@ -3,9 +3,13 @@
 
 import { useState } from "react";
 
+
 function App() {
 const [todos, setTodos] = useState([]);
-const [input, setInput] = useState("");
+const [task, setTask] = useState("");
+/* dark mode */
+const [darkMode, setDarkMode] = useState(false);
+
 
 const addTodo = () => {
 if (input.trim() === "") return;
