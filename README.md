@@ -1,5 +1,6 @@
 # ToDo App
  
+
 En enkel ToDo-applikation byggd med React där användaren kan lägga till, markera som klar och ta bort uppgifter. Appen uppdateras dynamiskt med hjälp av Reacts state-hantering utan att sidan behöver laddas om.
  
 ---
