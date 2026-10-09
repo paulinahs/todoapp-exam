@@ -2,7 +2,17 @@
  
 
 En enkel ToDo-applikation byggd med React där användaren kan lägga till, markera som klar och ta bort uppgifter. Appen uppdateras dynamiskt med hjälp av Reacts state-hantering utan att sidan behöver laddas om.
+
+---
  
+## Muntlig redovisning
+ 
+Videolänk:
+ 
+[[Link](https://funet-my.sharepoint.com/:v:/g/personal/3ggyhmu26_hesspa_folkuniversitetet_nu/IQAqoYNhXuF0R4EIGuwDpB3nAcEiKObnJiANohqors6xi-c?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=B9xFt1)]
+ 
+
+
 ---
  
 ## Funktioner
@@ -25,7 +35,7 @@ Min app använder Reacts `useState` för att lagra alla uppgifter i en array. Va
 ### 2. Oföränderlighet (Immutability)
  
 Man ska inte ändra en befintlig array direkt med exempelvis `.push()` eftersom React kanske inte upptäcker att state har förändrats. Istället skapar man en ny kopia av arrayen och uppdaterar den. När jag lägger till en uppgift använder jag spread-operatorn (`...`) för att skapa en ny array, och när jag tar bort en uppgift använder jag `filter()` som returnerar en ny array.
- 
+
 ---
  
 ## Kodgranskning
@@ -48,21 +58,13 @@ function addTodo(todos, text) {
 return [...todos, text];
 }
 ```
- 
+
 Denna lösning skapar en ny array som innehåller alla tidigare uppgifter samt den nya uppgiften. Originalarrayen lämnas oförändrad.
- 
+
 ---
  
 ## Problemlösning & Reflektion
  
 När jag körde fast försökte jag först dela upp problemet i mindre delar och fokusera på en funktion i taget. Ett problem jag stötte på var att förstå hur state skulle uppdateras utan att ändra den ursprungliga arrayen. Jag använde AI och React-dokumentationen för att läsa om immutability och fick exempel på hur `map()`, `filter()` och spread-operatorn används vid state-uppdateringar. Därefter testade jag lösningarna själv i projektet tills jag förstod hur React uppdaterar gränssnittet när state förändras.
- 
----
- 
-## Muntlig redovisning
- 
-Videolänk:
- 
-[Link]
- 
+
 ---
